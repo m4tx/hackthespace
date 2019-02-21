@@ -2,6 +2,7 @@
 <html lang="en" class="h-100">
 
 {% load static %}
+{% load sass_tags %}
 
 <head>
     <meta charset="utf-8">
@@ -16,6 +17,8 @@
 
     <link rel="stylesheet"
           href="{% static 'css/bootstrap4-neon-glow.min.css' %}">
+    <link rel="stylesheet"
+          href="{% sass_src 'scss/main.scss' %}">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto"
           rel="stylesheet">
@@ -38,8 +41,8 @@
 <footer class="footer mt-auto py-3">
     <div class="container">
         <a href="https://sfi.pl">
-            <img src="{% static 'images/sfi.svg' %}" class="mx-auto d-block"
-                 alt="SFI Logo" style="width: 40px;">
+            <img src="{% static 'images/sfi.svg' %}" id="sfi-logo"
+                 class="mx-auto d-block" alt="SFI Logo">
         </a>
     </div>
 </footer>
