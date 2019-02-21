@@ -24,6 +24,8 @@
           rel="stylesheet">
     <link rel='stylesheet'
           href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    {% block extra_head %}{% endblock %}
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -34,7 +36,7 @@
     </div>
 </nav>
 
-<main role="main" class="flex-shrink-0">
+<main role="main" class="flex-grow-1 d-flex flex-column">
     {% block content %}{% endblock %}
 </main>
 
@@ -56,6 +58,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
+{% block extra_scripts %}{% endblock %}
 
 </body>
 </html>
