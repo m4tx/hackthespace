@@ -19,6 +19,6 @@ from game.puzzles.rot13 import Rot13PuzzleView
 from game.views import HomeView
 
 urlpatterns = [
-    path('', HomeView.as_view()),
+    path('', HomeView.as_view(), name='home'),
     path('rot13/', Rot13PuzzleView.as_view()),
 ]
