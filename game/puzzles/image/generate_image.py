@@ -13,7 +13,7 @@ def put_text_on_image(
     w, h = d.textsize(text, font=font)
     center_w = (img.size[0] - w) // 2
     center_h = (img.size[1] - h) // 2
-    d.text((center_w, center_h), text, fill=(255, 255, 255, 1), font=font)
+    d.text((center_w, center_h), text, fill=(255, 255, 255, 2), font=font)
     combined = Image.alpha_composite(img, txt)
 
     combined.save(dest_path)
