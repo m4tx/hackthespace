@@ -20,5 +20,6 @@ from game.views import HomeView
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
-    path('rot13/', Rot13PuzzleView.as_view()),
+    path('rot13/', Rot13PuzzleView.as_view(), name='rot13'),
+    path('toomuchwant/', Rot13PuzzleView.as_view(), name='xdd'),
 ]
