@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.urls import path
 
-from game.puzzles.rot13 import Rot13PuzzleView
+from game.puzzles.image.puzzle import ImagePuzzleView
+from game.puzzles.rot13.puzzle import Rot13PuzzleView
 from game.views import HomeView
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('rot13/', Rot13PuzzleView.as_view(), name='rot13'),
-    path('toomuchwant/', Rot13PuzzleView.as_view(), name='xdd'),
+    path('toomuchwant/', ImagePuzzleView.as_view(), name='image'),
 ]

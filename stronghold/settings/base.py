@@ -129,3 +129,14 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'sass_processor.finders.CssFinder',
 ]
+
+
+# Puzzle settings
+PUZZLE_ORDER = [
+    'rot13',
+    'image',
+    'rot13'
+]
+
+PUZZLE_IMAGE_FONT_NAME = 'Roboto/Roboto-Black.ttf'
+PUZZLE_IMAGE_FONT_SIZE = 600
