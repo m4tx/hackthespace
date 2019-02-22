@@ -138,6 +138,7 @@ PUZZLE_ORDER = [
     'terminal',  # Requires hard-coding the next puzzle
     'redirect',
     'login',
+    'finish',
 ]
 
 PUZZLE_IMAGE_FONT_NAME = 'Roboto/Roboto-Black.ttf'

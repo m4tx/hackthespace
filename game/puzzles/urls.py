@@ -6,9 +6,11 @@ from game.puzzles.redirect.puzzle import RedirectPuzzleView
 from game.puzzles.rot13.puzzle import Rot13PuzzleView
 from game.puzzles.terminal.puzzle import TerminalPuzzleView
 from game.puzzles.login.puzzle import LoginPuzzleView
+from game.puzzles.finish.puzzle import FinishPuzzleView
 
 urlpatterns = [
     path('', Rot13PuzzleView.as_view(), name='rot13'),
+
     path('toomuchwant/', ImagePuzzleView.as_view(), name='image'),
     path('h4x.sh/', TerminalPuzzleView.as_view(), name='terminal'),
 
@@ -16,4 +18,6 @@ urlpatterns = [
     path('ysoslow/', RedirectFailPuzzleView.as_view(), name='redirect_fail'),
 
     path('login/', LoginPuzzleView.as_view(), name='login'),
+
+    path('finish/', FinishPuzzleView.as_view(), name='finish'),
 ]
