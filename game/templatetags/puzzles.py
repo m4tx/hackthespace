@@ -1,9 +1,11 @@
 from django import template
 from django.template import RequestContext
-from django.urls import reverse, resolve
+from django.urls import resolve
 
 from game.puzzles.order import (
-    get_next_puzzle, get_prev_puzzle, get_first_puzzle, get_last_puzzle)
+    get_next_puzzle, get_prev_puzzle, get_first_puzzle, get_last_puzzle,
+    get_first_puzzle_url, get_last_puzzle_url, get_next_puzzle_url,
+    get_prev_puzzle_url)
 
 register = template.Library()
 
@@ -36,19 +38,19 @@ def prev_puzzle(context: RequestContext):
 # Puzzle URLs
 @register.simple_tag
 def first_puzzle_url():
-    return reverse('puzzle:' + get_first_puzzle())
+    return get_first_puzzle_url()
 
 
 @register.simple_tag
 def last_puzzle_url():
-    return reverse('puzzle:' + get_last_puzzle())
+    return get_last_puzzle_url()
 
 
 @register.simple_tag(takes_context=True)
 def next_puzzle_url(context: RequestContext):
-    return reverse('puzzle:' + get_next_puzzle(__get_current_puzzle(context)))
+    return get_next_puzzle_url(__get_current_puzzle(context))
 
 
 @register.simple_tag(takes_context=True)
 def prev_puzzle_url(context: RequestContext):
-    return reverse('puzzle:' + get_prev_puzzle(__get_current_puzzle(context)))
+    return get_prev_puzzle_url(__get_current_puzzle(context))
