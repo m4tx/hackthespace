@@ -24,5 +24,6 @@ class Command(BaseCommand):
         dest_path = os.path.join(dest_dir, 'lookatme.png')
 
         put_text_on_image(
-            source_path, dest_path, reverse(get_next_puzzle('image')),
+            source_path, dest_path,
+            reverse('puzzle:' + get_next_puzzle('image')),
             font_path, settings.PUZZLE_IMAGE_FONT_SIZE)
