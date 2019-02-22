@@ -5,6 +5,7 @@ from game.puzzles.redirect.puzzle import RedirectFailPuzzleView
 from game.puzzles.redirect.puzzle import RedirectPuzzleView
 from game.puzzles.rot13.puzzle import Rot13PuzzleView
 from game.puzzles.terminal.puzzle import TerminalPuzzleView
+from game.puzzles.login.puzzle import LoginPuzzleView
 
 urlpatterns = [
     path('', Rot13PuzzleView.as_view(), name='rot13'),
@@ -14,4 +15,5 @@ urlpatterns = [
     path('redirect/', RedirectPuzzleView.as_view(), name='redirect'),
     path('ysoslow/', RedirectFailPuzzleView.as_view(), name='redirect_fail'),
 
+    path('login/', LoginPuzzleView.as_view(), name='login'),
 ]
