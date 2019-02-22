@@ -1,9 +1,10 @@
 {% load rot %}
+{% load puzzles %}
 
 <p class="text-grey text-spacey">
     {% filter rot19 %}Congratulations for solving the first puzzle! Do you want
         to take a challenge of becoming a space pirate?{% endfilter %}
 </p>
 <p class="text-grey text-spacey">
-    {% filter rot19 %}If so, visit {% url 'puzzle:image' %}! Good luck and have fun!{% endfilter %}
+    {% filter rot19 %}If so, visit {% next_puzzle_url %}! Good luck and have fun!{% endfilter %}
 </p>
