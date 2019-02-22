@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+
+{% block extra_head %}
+    <meta http-equiv="refresh"
+          content="0; url={% url 'puzzle:redirect_fail' %}"/>
+    <meta name="description" content="Nice job! Now go to /nextpuzzle.">
+{% endblock %}

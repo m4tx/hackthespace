@@ -135,7 +135,8 @@ STATICFILES_FINDERS = [
 PUZZLE_ORDER = [
     'rot13',
     'image',
-    'terminal',
+    'terminal',  # Requires hard-coding the next puzzle
+    'redirect',
 ]
 
 PUZZLE_IMAGE_FONT_NAME = 'Roboto/Roboto-Black.ttf'
