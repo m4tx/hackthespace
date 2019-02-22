@@ -1,55 +1,17 @@
 jQuery(function ($, undefined) {
-    const BIN_DIR = {
-        'bash': '',
-        'cat': '',
-        'chmod': '',
-        'chown': '',
-        'cp': '',
-        'date': '',
-        'df': '',
-        'dir': '',
-        'echo': '',
-        'ed': '',
-        'efibootmgr': '',
-        'false': '',
-        'fukulinus': '',
-        'getfacl': '',
-        'grep': '',
-        'ip': '',
-        'kill': '',
-        'less': '',
-        'ln': '',
-        'login': '',
-        'ls': '',
-        'mkdir': '',
-        'mktemp': '',
-        'more': '',
-        'mount': '',
-        'mv': '',
-        'nano': '',
-        'open': '',
-        'ping': '',
-        'ps': '',
-        'pwd': '',
-        'readlink': '',
-        'rm': '',
-        'rmdir': '',
-        'sed': '',
-        'sh': '',
-        'sleep': '',
-        'su': '',
-        'sync': '',
-        'systemctl': '',
-        'systemd': '',
-        'tar': '',
-        'touch': '',
-        'true': '',
-        'trythis': '',
-        'uname': '',
-        'umount': '',
-        'urcurious': '',
-        'which': '',
-    };
+    const BIN_FILES = [
+        'bash', 'cat', 'chmod', 'chown', 'cp', 'date', 'df', 'dir', 'echo',
+        'ed', 'efibootmgr', 'false', 'fukulinus', 'getfacl', 'grep', 'ip',
+        'kill', 'less', 'ln', 'login', 'ls', 'mkdir', 'mktemp', 'more',
+        'mount', 'mv', 'nano', 'open', 'ping', 'ps', 'pwd', 'readlink', 'rm',
+        'rmdir', 'sed', 'sh', 'sleep', 'su', 'sync', 'systemctl', 'systemd',
+        'tar', 'touch', 'true', 'trythis', 'uname', 'umount', 'urcurious',
+        'which'
+    ];
+    const BIN_DIR = {};
+    for (let file of BIN_FILES) {
+        BIN_DIR[file] = '';
+    }
 
     const ROOTFS = {
         'bin': BIN_DIR,
@@ -60,7 +22,9 @@ jQuery(function ($, undefined) {
             'sfi': {
                 'README': 'The solution must be somewhere here...',
                 'passwords': {
-                    'dontlook': 'I said don\'t look!'
+                    'dontlook': 'I said don\'t look!',
+                    'reallydont': 'You are curious, aren\'t you?',
+                    'stahp': 'Now let\'s go search somewhere else.',
                 }
             },
         },
