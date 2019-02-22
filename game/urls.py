@@ -24,5 +24,5 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('rot13/', Rot13PuzzleView.as_view(), name='rot13'),
     path('toomuchwant/', ImagePuzzleView.as_view(), name='image'),
-    path('terminal/', TerminalPuzzleView.as_view(), name='terminal'),
+    path('h4x.sh/', TerminalPuzzleView.as_view(), name='terminal'),
 ]
