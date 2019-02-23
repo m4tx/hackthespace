@@ -1,11 +1,9 @@
 import os
-
 from django.conf import settings
 from django.core.management.base import BaseCommand
-from django.urls import reverse
 
-from game.puzzles.image.generate_image import put_text_on_image
-from game.puzzles.order import get_next_puzzle
+from game.puzzles.image.asset_generator import generate_image
+from game.puzzles.order import get_next_puzzle_url
 
 
 class Command(BaseCommand):
@@ -16,14 +14,13 @@ class Command(BaseCommand):
             os.path.abspath(__file__))))
         puzzle_root = os.path.join(app_root, 'puzzles', 'image')
         source_path = os.path.join(puzzle_root, 'img', 'source.png')
-        font_path = os.path.join(puzzle_root,
-                                 'fonts', 'Roboto', 'Roboto-Black.ttf')
 
         dest_dir = os.path.join(app_root, 'static', 'images', 'generated')
         os.makedirs(dest_dir, exist_ok=True)
         dest_path = os.path.join(dest_dir, 'lookatme.png')
 
-        put_text_on_image(
-            source_path, dest_path,
-            reverse('puzzle:' + get_next_puzzle('image')),
-            font_path, settings.PUZZLE_IMAGE_FONT_SIZE)
+        generate_image(source_path, dest_path,
+                       str(get_next_puzzle_url('image')),
+                       settings.PUZZLE_IMAGE_FONT_NAME,
+                       settings.PUZZLE_IMAGE_FONT_SIZE,
+                       settings.PUZZLE_IMAGE_FILL)
