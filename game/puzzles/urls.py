@@ -7,6 +7,7 @@ from game.puzzles.rot13.puzzle import Rot13PuzzleView
 from game.puzzles.terminal.puzzle import TerminalPuzzleView
 from game.puzzles.login.puzzle import LoginPuzzleView
 from game.puzzles.finish.puzzle import FinishPuzzleView
+from game.puzzles.audio_spectrum.puzzle import AudioSpectrumPuzzleView
 
 urlpatterns = [
     path('', Rot13PuzzleView.as_view(), name='rot13'),
@@ -18,6 +19,8 @@ urlpatterns = [
     path('ysoslow/', RedirectFailPuzzleView.as_view(), name='redirect_fail'),
 
     path('login/', LoginPuzzleView.as_view(), name='login'),
+    path('audio_spectrum/', AudioSpectrumPuzzleView.as_view(),
+         name='audio_spectrum'),
 
     path('finish/', FinishPuzzleView.as_view(), name='finish'),
 ]

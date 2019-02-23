@@ -138,9 +138,26 @@ PUZZLE_ORDER = [
     'terminal',  # Requires hard-coding the next puzzle
     'redirect',
     'login',
+    'audio_spectrum',
     'finish',
 ]
 
 PUZZLE_IMAGE_FONT_NAME = 'Roboto/Roboto-Black.ttf'
 PUZZLE_IMAGE_FONT_SIZE = 550
 PUZZLE_IMAGE_FILL = (255, 255, 255, 2)
+
+PUZZLE_AUDIO_SPECTRUM_FONT_NAME = 'Roboto/Roboto-Black.ttf'
+PUZZLE_AUDIO_SPECTRUM_FONT_SIZE = 150
+PUZZLE_AUDIO_SPECTRUM_MIN_FREQ = 14000
+PUZZLE_AUDIO_SPECTRUM_MAX_FREQ = 17000
+PUZZLE_AUDIO_SPECTRUM_PPS = 30  # Pixels per second
+PUZZLE_AUDIO_SPECTRUM_AUDIO_POS = 5000
+PUZZLE_AUDIO_SPECTRUM_AUDIO_GAIN = -35
+PUZZLE_AUDIO_SPECTRUM_TAGS = {
+    'ARTIST': ['SFI'],
+    'ALBUM': ['Foreign Battle'],
+    'TITLE': ['Deadly Fox'],
+    'DATE': ['2019'],
+    'TRACKNUMBER': ['9/11'],
+    'COMMENT': ['000000A5 000000CC 000096C2 00000022 0000C9EE 0000006A'],
+}
