@@ -1,0 +1,4 @@
+{% load puzzles %}
+Congratulations for solving the first puzzle! Do you want to take a challenge of becoming the first space pirate hacker?
+
+If so, visit {% next_puzzle_url %}! Good luck and have fun!

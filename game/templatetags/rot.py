@@ -4,28 +4,32 @@ from django.template.defaultfilters import stringfilter
 register = Library()
 
 
+def rot_char(char, offset):
+    c = char.lower()
+    if c.isalpha():
+        o = ord(c) - ord('a') + offset
+        o %= 26
+        o += ord('a')
+        c = chr(o)
+
+        if char.isupper():
+            c = c.upper()
+    return c
+
+
 def rot(value: str, offset):
     rv = ''
 
     for char in value:
-        c = char.lower()
-
-        if ord('a') <= ord(c) <= ord('z'):
-            o = ord(c) - ord('a') + offset
-            o %= 26
-            o += ord('a')
-            c = chr(o)
-
-            if char.isupper():
-                c = c.upper()
-
-        rv += c
+        rv += rot_char(char, offset)
 
     return rv
 
 
-@register.filter(is_safe=True)
+@register.filter(name='rot', is_safe=True)
 @stringfilter
-def rot19(value):
-    """Applies a rot19 encoding on the string."""
-    return rot(value, 19)
+def rot_filter(value, shift: int):
+    """Applies a ROT encoding on the string."""
+    return rot(value, shift)
+
+

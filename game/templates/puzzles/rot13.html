@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
+{% load trim %}
 {% load rot %}
-{% load puzzles %}
 
 
 {% block content %}
@@ -13,19 +13,11 @@
                             class="vim-caret">d</span>
                     </h1>
 
-                    <p class="text-grey text-spacey">
-                        {% filter rot19 %}
-                            Congratulations for solving the first puzzle!
-                            Do you want to take a challenge of becoming
-                            the first space pirate hacker?
+                    <div class="text-grey text-spacey">
+                        {% filter rot:19|trim|linebreaks %}
+                            {% include 'puzzles/rot13_text.txt' %}
                         {% endfilter %}
-                    </p>
-                    <p class="text-grey text-spacey">
-                        {% filter rot19 %}
-                            If so, visit {% next_puzzle_url %}!
-                            Good luck and have fun!
-                        {% endfilter %}
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
