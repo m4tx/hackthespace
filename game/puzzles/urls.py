@@ -16,13 +16,13 @@ urlpatterns = [
     path('toomuchwant/', ImagePuzzleView.as_view(), name='image'),
     path('h4x.sh/', TerminalPuzzleView.as_view(), name='terminal'),
 
-    path('redirect/', RedirectPuzzleView.as_view(), name='redirect'),
+    path('wowsuchsecret/', RedirectPuzzleView.as_view(), name='redirect'),
     path('ysoslow/', RedirectFailPuzzleView.as_view(), name='redirect_fail'),
 
     path('login/', LoginPuzzleView.as_view(), name='login'),
-    path('audio_spectrum/', AudioSpectrumPuzzleView.as_view(),
+    path('spacemetal/', AudioSpectrumPuzzleView.as_view(),
          name='audio_spectrum'),
-    path('vigenere/', VigenerePuzzleView.as_view(), name='vigenere'),
+    path('vinegar/', VigenerePuzzleView.as_view(), name='vigenere'),
 
     path('finish/', FinishPuzzleView.as_view(), name='finish'),
 ]
