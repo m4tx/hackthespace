@@ -139,6 +139,7 @@ PUZZLE_ORDER = [
     'redirect',
     'login',
     'audio_spectrum',
+    'vigenere',
     'finish',
 ]
 

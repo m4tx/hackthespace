@@ -4,8 +4,9 @@ from django.template.defaultfilters import stringfilter
 register = Library()
 
 
-def rot_char(char, offset):
+def rot_char(char: str, offset: int):
     c = char.lower()
+
     if c.isalpha():
         o = ord(c) - ord('a') + offset
         o %= 26
@@ -14,10 +15,14 @@ def rot_char(char, offset):
 
         if char.isupper():
             c = c.upper()
+
     return c
 
 
-def rot(value: str, offset):
+@register.filter(name='rot')
+@stringfilter
+def rot(value: str, offset: int):
+    """Encrypt given string using ROT cipher."""
     rv = ''
 
     for char in value:
@@ -26,10 +31,19 @@ def rot(value: str, offset):
     return rv
 
 
-@register.filter(name='rot', is_safe=True)
-@stringfilter
-def rot_filter(value, shift: int):
-    """Applies a ROT encoding on the string."""
-    return rot(value, shift)
+@register.filter
+def vigenere(value: str, key: str):
+    """Encrypt given string using Vigenère cipher."""
+    key = key.lower()
+    string = ''
+    index = 0
 
+    for c in value:
+        if c.isalpha():
+            string += rot_char(c, ord(key[index]) - ord('a'))
+            index += 1
+            index %= len(key)
+        else:
+            string += c
 
+    return string

@@ -8,6 +8,7 @@ from game.puzzles.terminal.puzzle import TerminalPuzzleView
 from game.puzzles.login.puzzle import LoginPuzzleView
 from game.puzzles.finish.puzzle import FinishPuzzleView
 from game.puzzles.audio_spectrum.puzzle import AudioSpectrumPuzzleView
+from game.puzzles.vigenere.puzzle import VigenerePuzzleView
 
 urlpatterns = [
     path('', Rot13PuzzleView.as_view(), name='rot13'),
@@ -21,6 +22,7 @@ urlpatterns = [
     path('login/', LoginPuzzleView.as_view(), name='login'),
     path('audio_spectrum/', AudioSpectrumPuzzleView.as_view(),
          name='audio_spectrum'),
+    path('vigenere/', VigenerePuzzleView.as_view(), name='vigenere'),
 
     path('finish/', FinishPuzzleView.as_view(), name='finish'),
 ]

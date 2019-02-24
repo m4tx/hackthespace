@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load trim %}
+{% load rot %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 text-grey text-spacey">
+                <img class="rounded mx-auto d-block"
+                     src="{% static 'images/vinegar.jpg' %}">
+
+                {% filter trim|linebreaks %}
+                    {% include 'puzzles/vigenere_text.txt' %}
+                {% endfilter %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
