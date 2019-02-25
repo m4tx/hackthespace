@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load sky %}
+
+
+{% block content %}
+    <div class="container">
+        <p class="text-grey text-spacey sky-container">
+            {% generate_sky %}
+        </p>
+    </div>
+{% endblock %}

@@ -9,11 +9,13 @@ from game.puzzles.login.puzzle import LoginPuzzleView
 from game.puzzles.finish.puzzle import FinishPuzzleView
 from game.puzzles.audio_spectrum.puzzle import AudioSpectrumPuzzleView
 from game.puzzles.vigenere.puzzle import VigenerePuzzleView
+from game.puzzles.sky.puzzle import SkyPuzzleView
 
 urlpatterns = [
     path('', Rot13PuzzleView.as_view(), name='rot13'),
 
-    path('toomuchwant/', ImagePuzzleView.as_view(), name='image'),
+    path('toomuchwant/', SkyPuzzleView.as_view(), name='sky'),
+    path('lookclosely/', ImagePuzzleView.as_view(), name='image'),
     path('h4x.sh/', TerminalPuzzleView.as_view(), name='terminal'),
 
     path('wowsuchsecret/', RedirectPuzzleView.as_view(), name='redirect'),

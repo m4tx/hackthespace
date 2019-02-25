@@ -134,6 +134,7 @@ STATICFILES_FINDERS = [
 # Puzzle settings
 PUZZLE_ORDER = [
     'rot13',
+    'sky',
     'image',
     'terminal',  # Requires hard-coding the next puzzle
     'redirect',
