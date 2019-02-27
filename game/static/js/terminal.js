@@ -347,7 +347,7 @@ jQuery(function ($, undefined) {
         greetings:
             'GNU bash, version 5.0.0(1)-release (x86_64-pc-linux-gnu)\n',
         name: 'bash',
-        height: 200,
+        height: 500,
         prompt: '$ '
     });
 });
