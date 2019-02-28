@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>Lookup page</h1>
+
+        <form method="get">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="query"
+                       placeholder="Lookup by URL"
+                       aria-describedby="search-button"
+                       value="{% if 'query' in request.GET %}{{ request.GET.query }}{% else %}{{ request.path }}{% endif %}">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="submit"
+                            id="search-button">
+                        <span class="oi oi-magnifying-glass"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        {% if object_list %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Date added</th>
+                    <th scope="col">Internal name</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for puzzle in object_list %}
+                    <tr>
+                        <th scope="row">{{ puzzle.pk }}</th>
+                        <td>{{ puzzle.url }}</td>
+                        <td>{{ puzzle.date }}</td>
+                        <td>{{ puzzle.name }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}

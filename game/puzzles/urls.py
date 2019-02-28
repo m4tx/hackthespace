@@ -10,6 +10,7 @@ from game.puzzles.finish.puzzle import FinishPuzzleView
 from game.puzzles.audio_spectrum.puzzle import AudioSpectrumPuzzleView
 from game.puzzles.vigenere.puzzle import VigenerePuzzleView
 from game.puzzles.sky.puzzle import SkyPuzzleView
+from game.puzzles.pages.puzzle import PagesPuzzleView
 
 urlpatterns = [
     path('', Rot13PuzzleView.as_view(), name='rot13'),
@@ -21,7 +22,8 @@ urlpatterns = [
     path('wowsuchsecret/', RedirectPuzzleView.as_view(), name='redirect'),
     path('ysoslow/', RedirectFailPuzzleView.as_view(), name='redirect_fail'),
 
-    path('login/', LoginPuzzleView.as_view(), name='login'),
+    path('pagelookup/', PagesPuzzleView.as_view(), name='pages'),
+    path('goawayfromhere/', LoginPuzzleView.as_view(), name='login'),
     path('spacemetal/', AudioSpectrumPuzzleView.as_view(),
          name='audio_spectrum'),
     path('vinegar/', VigenerePuzzleView.as_view(), name='vigenere'),

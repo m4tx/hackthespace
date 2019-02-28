@@ -138,6 +138,7 @@ PUZZLE_ORDER = [
     'image',
     'terminal',  # Requires hard-coding the next puzzle
     'redirect',
+    'pages',
     'login',
     'audio_spectrum',
     'vigenere',

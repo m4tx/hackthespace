@@ -32,17 +32,21 @@ def get_prev_puzzle(puzzle: str) -> str:
 
 
 # Puzzle URLs
-def get_first_puzzle_url() -> str:
-    return reverse_lazy('puzzle:' + get_first_puzzle())
+def get_first_puzzle_url():
+    return get_puzzle_url(get_first_puzzle())
 
 
-def get_last_puzzle_url() -> str:
-    return reverse_lazy('puzzle:' + get_last_puzzle())
+def get_last_puzzle_url():
+    return get_puzzle_url(get_last_puzzle())
 
 
-def get_next_puzzle_url(puzzle: str) -> str:
-    return reverse_lazy('puzzle:' + get_next_puzzle(puzzle))
+def get_next_puzzle_url(puzzle: str):
+    return get_puzzle_url(get_next_puzzle(puzzle))
 
 
-def get_prev_puzzle_url(puzzle: str) -> str:
-    return reverse_lazy('puzzle:' + get_prev_puzzle(puzzle))
+def get_prev_puzzle_url(puzzle: str):
+    return get_puzzle_url(get_prev_puzzle(puzzle))
+
+
+def get_puzzle_url(puzzle: str):
+    return reverse_lazy('puzzle:' + puzzle)
