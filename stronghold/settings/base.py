@@ -144,6 +144,7 @@ PUZZLE_ORDER = [
     'vigenere',
     'finish',
 ]
+INSTALLED_APPS += PUZZLE_ORDER
 
 PUZZLE_IMAGE_FONT_NAME = 'Roboto/Roboto-Black.ttf'
 PUZZLE_IMAGE_FONT_SIZE = 550

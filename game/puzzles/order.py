@@ -49,4 +49,4 @@ def get_prev_puzzle_url(puzzle: str):
 
 
 def get_puzzle_url(puzzle: str):
-    return reverse_lazy('puzzle:' + puzzle)
+    return reverse_lazy('{0}:{0}'.format(puzzle))

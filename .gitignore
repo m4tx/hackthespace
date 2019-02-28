@@ -56,8 +56,7 @@ coverage.xml
 local_settings.py
 db.sqlite3
 static_root/
-game/static/images/generated/
-game/static/audio/generated/
+generated/
 
 # Flask stuff:
 instance/
