@@ -20,7 +20,7 @@ VIEWS_PY_CONTENT = '''from django.views.generic import TemplateView
 
 
 class {title_name}PuzzleView(TemplateView):
-    template_name = 'puzzles/{name}.html'
+    template_name = '{name}.html'
 '''
 
 URLS_PY_CONTENT = '''from django.urls import path
