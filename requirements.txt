@@ -4,6 +4,7 @@ django-sass-processor==0.7.2
 libsass==0.17.0
 Pillow==5.4.1
 pydub==0.23.1
+pyminizip==0.2.4
 pytaglib==1.4.4
 pytz==2018.9
 six==1.12.0
