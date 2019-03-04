@@ -311,7 +311,7 @@ jQuery(function ($, undefined) {
 
     function execUname(cmd, args) {
         this.echo(
-            'Linux sfi-www 2.13.7 x86_64 GNU/Linux. Build 7600. ' +
+            'Linux sfi-www 5.0 x86_64 GNU/Linux. Build 7600. ' +
             'This copy of GNU/Linux is not genuine.');
     }
 
