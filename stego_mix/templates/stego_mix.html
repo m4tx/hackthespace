@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 
 {% block content %}
-    <div class="container">
-        <p class="text-grey text-spacey">
-            This is a new puzzle.
-        </p>
+    <div class="jumbotron bg-transparent mb-0 radius-0">
+        <div class="container">
+            <img src="{% static 'images/generated/lookcloser.png' %}"
+                 class="img-fluid" alt="Look closer!" title="Look closer!">
+        </div>
     </div>
 {% endblock %}

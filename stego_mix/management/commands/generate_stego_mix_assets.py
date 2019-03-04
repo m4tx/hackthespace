@@ -7,4 +7,6 @@ class Command(BaseCommand):
     help = 'Generate audio file for "audio spectrum" puzzle'
 
     def handle(self, *args, **kwargs):
-        AssetGenerator().generate()
+        generator = AssetGenerator()
+        generator.load_django_config()
+        generator.generate()
