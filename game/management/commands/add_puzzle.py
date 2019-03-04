@@ -28,7 +28,7 @@ URLS_PY_CONTENT = '''from django.urls import path
 from {name}.views import {title_name}PuzzleView
 
 urlpatterns = [
-    path('', {title_name}PuzzleView.as_view(), name='{name}'),
+    path('{name}/', {title_name}PuzzleView.as_view(), name='{name}'),
 ]
 '''
 
