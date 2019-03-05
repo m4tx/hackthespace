@@ -2,7 +2,7 @@ import os
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from game.puzzles.order import get_next_puzzle_url
+from game.puzzle_order import get_next_puzzle_url
 from image.asset_generator import generate_image
 
 

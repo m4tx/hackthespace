@@ -3,7 +3,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from audio_spectrum.asset_generator import hide_text_in_audio
-from game.puzzles.order import get_next_puzzle_url
+from game.puzzle_order import get_next_puzzle_url
 
 
 class Command(BaseCommand):

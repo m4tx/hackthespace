@@ -2,7 +2,7 @@ import random
 from django import template
 from django.utils.safestring import mark_safe
 
-from game.puzzles.order import get_next_puzzle_url
+from game.puzzle_order import get_next_puzzle_url
 
 register = template.Library()
 

@@ -1,15 +1,13 @@
 import random
 import string
 from django.http import Http404
-from django.shortcuts import redirect
 from django.utils import timezone
 from django.views import View
 from typing import Type
 
 from game.models import Player, SolvedPuzzle
-from game.puzzles.order import (
-    get_first_puzzle, puzzle_less, get_next_puzzle, get_puzzle_url,
-    get_last_puzzle)
+from game.puzzle_order import (
+    get_first_puzzle, puzzle_less, get_next_puzzle, get_last_puzzle)
 
 SID_CHARS = string.ascii_uppercase + string.ascii_lowercase + string.digits
 

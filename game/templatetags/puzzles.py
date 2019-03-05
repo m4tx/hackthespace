@@ -2,7 +2,7 @@ from django import template
 from django.template import RequestContext
 from django.urls import resolve
 
-from game.puzzles.order import (
+from game.puzzle_order import (
     get_next_puzzle, get_prev_puzzle, get_first_puzzle, get_last_puzzle,
     get_first_puzzle_url, get_last_puzzle_url, get_next_puzzle_url,
     get_prev_puzzle_url)

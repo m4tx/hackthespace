@@ -6,7 +6,7 @@ import tempfile
 from PIL import Image
 from django.conf import settings
 
-from game.puzzles.order import get_next_puzzle_url
+from game.puzzle_order import get_next_puzzle_url
 from game.utils.files import cat_files
 from game.utils.images import put_text_on_image
 from vendor.steglsb import LSBEncode

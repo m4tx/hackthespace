@@ -4,7 +4,7 @@ from django.conf import settings
 from django.db import migrations
 from django.utils import timezone
 
-from game.puzzles.order import get_puzzle_url
+from game.puzzle_order import get_puzzle_url
 
 
 def put_puzzle_data(apps, schema_editor):

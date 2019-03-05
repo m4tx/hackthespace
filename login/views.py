@@ -2,7 +2,7 @@ from django import forms
 from django.views.generic import FormView
 
 from game.decorators import puzzle
-from game.puzzles.order import get_next_puzzle_url
+from game.puzzle_order import get_next_puzzle_url
 
 
 class LoginForm(forms.Form):

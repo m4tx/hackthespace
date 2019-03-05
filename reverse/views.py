@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 
 from game.decorators import puzzle
-from game.puzzles.order import get_next_puzzle_url
+from game.puzzle_order import get_next_puzzle_url
 
 KEY = [
     0x9f, 0xd0, 0x27, 0x60, 0xab, 0x4c, 0xbe, 0xcf, 0x43, 0xe7, 0xd0, 0xe0,
