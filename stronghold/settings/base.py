@@ -143,6 +143,7 @@ PUZZLE_ORDER = [
     'audio_spectrum',
     'vigenere',
     'stego_mix',
+    'reverse',
     'finish',
 ]
 INSTALLED_APPS += PUZZLE_ORDER
