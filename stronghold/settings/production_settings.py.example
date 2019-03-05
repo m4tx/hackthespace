@@ -29,3 +29,5 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+ADMINS = [('m4tx', 'm4tx@m4tx.pl')]
