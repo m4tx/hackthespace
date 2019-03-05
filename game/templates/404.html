@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load puzzles %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-2 text-danger">Not found</h1>
+            <p class="lead">The page you requested was not found.</p>
+            <a class="btn btn-primary btn-lg" href="{% first_puzzle_url %}"
+               role="button"><span class="oi oi-home"></span> Homepage</a>
+        </div>
+    </div>
+
+
+{% endblock %}
