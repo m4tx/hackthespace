@@ -4,7 +4,7 @@ from stego_mix.asset_generator import AssetGenerator
 
 
 class Command(BaseCommand):
-    help = 'Generate audio file for "audio spectrum" puzzle'
+    help = 'Generate audio file for "stego mix" puzzle'
 
     def handle(self, *args, **kwargs):
         generator = AssetGenerator()
