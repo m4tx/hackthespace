@@ -31,6 +31,10 @@ def get_prev_puzzle(puzzle: str) -> str:
             return ORDER[index - 1]
 
 
+def puzzle_less(lhs: str, rhs: str) -> bool:
+    return ORDER.index(lhs) < ORDER.index(rhs)
+
+
 # Puzzle URLs
 def get_first_puzzle_url():
     return get_puzzle_url(get_first_puzzle())

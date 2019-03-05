@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 
+from game.decorators import puzzle
 from game.puzzles.order import get_next_puzzle_url
 
 KEY = [
@@ -8,6 +9,7 @@ KEY = [
 ]
 
 
+@puzzle
 class ReversePuzzleView(TemplateView):
     template_name = 'reverse.html'
 

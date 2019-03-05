@@ -1,6 +1,7 @@
 from django import forms
 from django.views.generic import FormView
 
+from game.decorators import puzzle
 from game.puzzles.order import get_next_puzzle_url
 
 
@@ -8,6 +9,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(max_length=50)
 
 
+@puzzle
 class LoginPuzzleView(FormView):
     template_name = 'login.html'
     form_class = LoginForm
