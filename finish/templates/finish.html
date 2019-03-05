@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 
 {% block content %}
     <div class="container">
         <p class="text-grey text-spacey">
             Congratulations! This was the last challenge.
         </p>
+
+        <img src="{% static 'images/zaionc.png' %}"
+             class="img-fluid d-block m-auto" alt="ZAIONC" title="ZAIONC">
     </div>
 {% endblock %}
