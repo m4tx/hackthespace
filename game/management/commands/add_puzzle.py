@@ -44,7 +44,7 @@ class Command(BaseCommand):
             'name', help='underscore case name of the puzzle to add', type=str)
 
     def handle(self, *args, **options):
-        name: str = options.pop('name').lower()
+        name = options.pop('name').lower()
         title_name = name.title().replace('_', '')
 
         call_command('startapp', name)
