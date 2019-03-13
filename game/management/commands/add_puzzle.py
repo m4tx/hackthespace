@@ -98,6 +98,6 @@ class Command(BaseCommand):
 
     def __add_to_order(self, name, title_name):
         urls_path = os.path.join(self.__get_project_root(),
-                                 'stronghold', 'settings', 'base.py')
+                                 'hackthespace', 'settings', 'base.py')
         self.__apply_regex_to_file(urls_path, SETTINGS_REGEX, SETTINGS_SUBST,
                                    name, title_name)

@@ -1,10 +1,10 @@
-# stronghold
+# hackthespace
 
 ## Quick Start
 
 ```
 pip install -r requirements.txt
-cp stronghold/settings/local_settings.py{.example,}
+cp hackthespace/settings/local_settings.py{.example,}
 python manage.py migrate
 python manage.py generate_assets
 python manage.py runserver

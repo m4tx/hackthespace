@@ -8,9 +8,9 @@ SECRET_KEY = ''
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['stronghold.sfi.pl']
+ALLOWED_HOSTS = ['hackthespace.sfi.pl']
 
-STATIC_ROOT = '/home/stronghold/static'
+STATIC_ROOT = '/home/hackthespace/static'
 
 # HTTPS
 CSRF_COOKIE_SECURE = True
@@ -22,8 +22,8 @@ SESSION_COOKIE_SECURE = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'stronghold',
-        'USER': 'stronghold',
+        'NAME': 'hackthespace',
+        'USER': 'hackthespace',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '5432',
