@@ -1,17 +1,12 @@
 {% extends 'base.html' %}
 
+{% load tale %}
 {% load sky %}
 
 
 {% block content %}
     <div class="container">
-        <div class="fairy-tale">
-            A long time ago in a galaxy far, far away... Someone naive let an
-            intern deploy their code on production and left you with total
-            failure of your autopilot, thank them very much. Well, it looks like
-            you'll have to find your way home using good old manual navigation -
-            unacceptable, what year is it? 2019?
-        </div>
+        {% tale 'sky-tale.txt' %}
 
         <p class="text-grey text-spacey sky-container">
             {% generate_sky %}
