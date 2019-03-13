@@ -1,5 +1,5 @@
 {% load puzzles %}
 
-Congratulations for solving the first puzzle! Do you want to take a challenge of becoming the first space pirate hacker?
+Ahoy scallywag! I see ye know yer way around a computer, don't ya? Listen, what would you say if I were to offer ya the biggest adventure of yer life? I could use someone with yer skills on me ship. Ye could be rich, kiddo.
 
-If so, visit {% next_puzzle_url %}! Good luck and have fun!
+So, what do ya say? Ready to board {% next_puzzle_url %}?
