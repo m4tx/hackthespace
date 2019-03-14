@@ -10,7 +10,7 @@ from game.puzzle_order import (
 register = template.Library()
 
 
-def __get_current_puzzle(context: RequestContext):
+def get_current_puzzle(context: RequestContext):
     return resolve(context.request.path).url_name
 
 
@@ -27,12 +27,12 @@ def last_puzzle():
 
 @register.simple_tag(takes_context=True)
 def next_puzzle(context: RequestContext):
-    return get_next_puzzle(__get_current_puzzle(context))
+    return get_next_puzzle(get_current_puzzle(context))
 
 
 @register.simple_tag(takes_context=True)
 def prev_puzzle(context: RequestContext):
-    return get_prev_puzzle(__get_current_puzzle(context))
+    return get_prev_puzzle(get_current_puzzle(context))
 
 
 # Puzzle URLs
@@ -48,9 +48,9 @@ def last_puzzle_url():
 
 @register.simple_tag(takes_context=True)
 def next_puzzle_url(context: RequestContext):
-    return get_next_puzzle_url(__get_current_puzzle(context))
+    return get_next_puzzle_url(get_current_puzzle(context))
 
 
 @register.simple_tag(takes_context=True)
 def prev_puzzle_url(context: RequestContext):
-    return get_prev_puzzle_url(__get_current_puzzle(context))
+    return get_prev_puzzle_url(get_current_puzzle(context))
