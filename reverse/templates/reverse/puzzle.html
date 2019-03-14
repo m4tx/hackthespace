@@ -1,17 +1,12 @@
 {% extends 'base.html' %}
 
 {% load trim %}
+{% load tale %}
 
 
 {% block content %}
     <div class="container">
-        <p>
-            The code below is a part of a program that allows in only if
-            the user provides valid password.
-        </p>
-        <p>
-            Can you guess what it is?
-        </p>
+        {% tale %}
 
         <pre class="text-grey"><code>{% filter trim %}
             {% include 'reverse/code.asm'|trim %}

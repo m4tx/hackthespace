@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
+{% load tale %}
+
 
 {% block content %}
     <div class="container">
+        {% tale %}
+
         <h1>Lookup page</h1>
 
         <form method="get">

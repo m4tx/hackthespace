@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load tale %}
 
 
 {% block content %}
-    <div class="jumbotron bg-transparent mb-0 radius-0">
-        <div class="container">
-            <img src="{% static 'images/generated/lookcloser.png' %}"
-                 class="img-fluid" alt="Look closer!" title="Look closer!">
-        </div>
+    <div class="container">
+        {% tale %}
+
+        <img src="{% static 'images/generated/lookcloser.png' %}"
+             class="img-fluid" alt="Look closer!" title="Look closer!">
     </div>
 {% endblock %}
