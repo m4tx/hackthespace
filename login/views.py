@@ -11,7 +11,7 @@ class LoginForm(forms.Form):
 
 @puzzle
 class LoginPuzzleView(FormView):
-    template_name = 'login.html'
+    template_name = 'login/puzzle.html'
     form_class = LoginForm
     success_url = get_next_puzzle_url('login')
 

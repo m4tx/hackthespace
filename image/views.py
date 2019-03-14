@@ -5,4 +5,4 @@ from game.decorators import puzzle
 
 @puzzle
 class ImagePuzzleView(TemplateView):
-    template_name = 'image.html'
+    template_name = 'image/puzzle.html'

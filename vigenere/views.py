@@ -5,4 +5,4 @@ from game.decorators import puzzle
 
 @puzzle
 class VigenerePuzzleView(TemplateView):
-    template_name = 'vigenere.html'
+    template_name = 'vigenere/puzzle.html'

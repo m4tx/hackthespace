@@ -11,7 +11,7 @@ class SearchForm(forms.Form):
 
 @puzzle
 class PagesPuzzleView(ListView):
-    template_name = 'pages.html'
+    template_name = 'pages/puzzle.html'
     form_class = SearchForm
     model = Puzzle
 

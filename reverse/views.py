@@ -11,7 +11,7 @@ KEY = [
 
 @puzzle
 class ReversePuzzleView(TemplateView):
-    template_name = 'reverse.html'
+    template_name = 'reverse/puzzle.html'
 
     def get_context_data(self, **kwargs):
         context = super(ReversePuzzleView, self).get_context_data(**kwargs)

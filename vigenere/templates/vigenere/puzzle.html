@@ -13,7 +13,7 @@
                      src="{% static 'images/vinegar.jpg' %}">
 
                 {% filter vigenere:"absolutelycool"|trim|linebreaks %}
-                    {% include 'vigenere_text.txt' %}
+                    {% include 'vigenere/text.txt' %}
                 {% endfilter %}
             </div>
         </div>

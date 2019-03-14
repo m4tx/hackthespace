@@ -5,4 +5,4 @@ from game.decorators import puzzle
 
 @puzzle
 class Rot13PuzzleView(TemplateView):
-    template_name = 'rot13.html'
+    template_name = 'rot13/puzzle.html'

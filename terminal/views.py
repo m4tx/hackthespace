@@ -5,4 +5,4 @@ from game.decorators import puzzle
 
 @puzzle
 class TerminalPuzzleView(TemplateView):
-    template_name = 'terminal.html'
+    template_name = 'terminal/puzzle.html'

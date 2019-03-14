@@ -5,4 +5,4 @@ from game.decorators import puzzle
 
 @puzzle
 class SkyPuzzleView(TemplateView):
-    template_name = 'sky.html'
+    template_name = 'sky/puzzle.html'
