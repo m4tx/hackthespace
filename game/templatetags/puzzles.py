@@ -11,7 +11,7 @@ register = template.Library()
 
 
 def get_current_puzzle(context: RequestContext):
-    return resolve(context.request.path).url_name
+    return resolve(context.request.path).app_name
 
 
 # Puzzle names
