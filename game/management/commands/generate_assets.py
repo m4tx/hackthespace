@@ -4,6 +4,7 @@ from django.core.management.base import BaseCommand
 
 COMMANDS = [
     'generate_image_assets',
+    'generate_pages_assets',
     'generate_audio_spectrum_assets',
     'generate_stego_mix_assets',
 ]
