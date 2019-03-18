@@ -1,8 +1,9 @@
 .sky-container {
   a {
-    color: #fff;
+    color: inherit;
 
     &:hover {
+      color: inherit;
       text-decoration: none;
     }
   }
