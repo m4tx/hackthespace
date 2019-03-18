@@ -20,7 +20,7 @@ VIEWS_PY_CONTENT = '''from django.views.generic import TemplateView
 
 
 class {title_name}PuzzleView(TemplateView):
-    template_name = '{name}.html'
+    template_name = '{name}/puzzle.html'
 '''
 
 URLS_PY_CONTENT = '''from django.urls import path
@@ -61,11 +61,11 @@ class Command(BaseCommand):
 
     def __create_files(self, name, title_name):
         app_root = self.__get_app_root(name)
-        templates_root = os.path.join(app_root, 'templates')
+        templates_root = os.path.join(app_root, 'templates', name)
         os.makedirs(templates_root)
 
         self.__create_views_file(app_root, name, title_name)
-        self.__create_template_file(templates_root, name)
+        self.__create_template_file(templates_root)
         self.__create_urls_file(app_root, name, title_name)
 
     @staticmethod
@@ -75,8 +75,8 @@ class Command(BaseCommand):
             f.write(VIEWS_PY_CONTENT.format(name=name, title_name=title_name))
 
     @staticmethod
-    def __create_template_file(templates_root, name):
-        template_path = os.path.join(templates_root, '{}.html'.format(name))
+    def __create_template_file(templates_root):
+        template_path = os.path.join(templates_root, 'puzzle.html')
         with open(template_path, 'w') as f:
             f.write(TEMPLATE_CONTENT)
 
