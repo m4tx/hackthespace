@@ -1,12 +1,8 @@
-from django import forms
 from django.views.generic import ListView
 
 from game.decorators import puzzle
+from pages.forms import SearchForm
 from pages.models import Puzzle
-
-
-class SearchForm(forms.Form):
-    query = forms.CharField(max_length=100)
 
 
 @puzzle
