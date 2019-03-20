@@ -23,6 +23,4 @@ class ReversePuzzleView(TemplateView):
         return context
 
     def encode_url(self, s, key):
-        print(len(s))
-        print(len(key))
         return [ord(x) ^ key[i] for i, x in enumerate(reversed(s))]

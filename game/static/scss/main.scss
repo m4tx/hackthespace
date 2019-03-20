@@ -1,13 +1,6 @@
-// Navbar
-.navbar {
-  .navbar-brand {
-    color: #606060;
-  }
-}
-
-#sfi-logo {
-  height: 40px;
-}
+@import 'body';
+@import 'navbar';
+@import 'fairy_tale';
 
 // Puzzles
-@import "sky";
+@import "puzzles/sky";
