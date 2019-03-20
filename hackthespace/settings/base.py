@@ -131,6 +131,9 @@ STATICFILES_FINDERS = [
 ]
 
 
+# Google Analytics
+GA_ID = ''
+
 # Puzzle settings
 PUZZLE_ORDER = [
     'rot13',
