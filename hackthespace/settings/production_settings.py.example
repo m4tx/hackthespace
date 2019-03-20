@@ -31,3 +31,6 @@ DATABASES = {
 }
 
 ADMINS = [('m4tx', 'm4tx@m4tx.pl')]
+
+# Google Analytics
+GA_ID = ''
