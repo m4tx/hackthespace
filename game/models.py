@@ -1,8 +1,15 @@
+import random
+import string
 from django.conf import settings
 from django.db import models
+from django.utils import timezone
 from django.utils.functional import cached_property
 
+from game.puzzle_order import get_first_puzzle
+
 PUZZLES = ((name, name) for name in settings.PUZZLE_ORDER)
+
+SID_CHARS = string.ascii_uppercase + string.ascii_lowercase + string.digits
 
 
 class Player(models.Model):
@@ -12,6 +19,26 @@ class Player(models.Model):
     @cached_property
     def last_puzzle(self) -> str:
         return self.solvedpuzzle_set.order_by('-timestamp').first().puzzle
+
+    @staticmethod
+    def generate_sid(length=20, chars=SID_CHARS):
+        return ''.join(random.choice(chars) for _ in range(length))
+
+    @staticmethod
+    def get_player(request) -> 'Player':
+        if ('sid' in request.COOKIES and
+                Player.objects.filter(
+                    session_id=request.COOKIES['sid']).exists()):
+            sid = request.COOKIES['sid']
+            player = Player.objects.get(session_id=sid)
+        else:
+            sid = Player.generate_sid()
+            player = Player.objects.create(session_id=sid)
+            SolvedPuzzle.objects.create(
+                player=player, puzzle=get_first_puzzle(),
+                timestamp=timezone.now())
+
+        return player
 
     def __str__(self):
         s = self.session_id

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>Email address</h1>
+
+        <form method="post">
+            {% if form.errors %}
+                <div class="alert alert-danger" role="alert">
+                    Please provide a valid email address.
+                </div>
+            {% endif %}
+
+            <p class="lead">
+                You are really good! Please provide your email address, so
+                we can contact you.
+            </p>
+
+            <div class="form-group">
+                <input type="email" class="form-control form-control-lg"
+                       name="email" id="emailInput" maxlength="100"
+                       placeholder="Email address"
+                       value="{{ form.email.value }}" required>
+            </div>
+
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-lg float-right">
+                Continue <span class="ml-1 small oi oi-chevron-right"></span>
+            </button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,33 +1,10 @@
-import random
-import string
 from django.http import Http404
 from django.utils import timezone
 from django.views import View
 from typing import Type
 
-from game.models import Player, SolvedPuzzle
-from game.puzzle_order import (
-    get_first_puzzle, puzzle_less, get_next_puzzle, get_last_puzzle)
-
-SID_CHARS = string.ascii_uppercase + string.ascii_lowercase + string.digits
-
-
-def generate_sid(length=20, chars=SID_CHARS):
-    return ''.join(random.choice(chars) for _ in range(length))
-
-
-def get_player(request):
-    if ('sid' in request.COOKIES and
-            Player.objects.filter(session_id=request.COOKIES['sid']).exists()):
-        sid = request.COOKIES['sid']
-        player = Player.objects.get(session_id=sid)
-    else:
-        sid = generate_sid()
-        player = Player.objects.create(session_id=sid)
-        SolvedPuzzle.objects.create(
-            player=player, puzzle=get_first_puzzle(),
-            timestamp=timezone.now())
-    return player, sid
+from game.models import SolvedPuzzle, Player
+from game.puzzle_order import puzzle_less, get_next_puzzle, get_last_puzzle
 
 
 def puzzle(cls: Type[View]):
@@ -38,7 +15,7 @@ def puzzle(cls: Type[View]):
     def new_dispatch(self, request, *args, **kwargs):
         response = orig_dispatch(self, request, *args, **kwargs)
 
-        player, sid = get_player(request)
+        player = Player.get_player(request)
 
         # Only allow proceeding to the next puzzle
         if player.last_puzzle != get_last_puzzle():
@@ -52,7 +29,8 @@ def puzzle(cls: Type[View]):
                 raise Http404
 
         response.set_cookie(
-            'sid', sid, expires=timezone.now() + timezone.timedelta(days=365))
+            'sid', player.session_id,
+            expires=timezone.now() + timezone.timedelta(days=365))
 
         return response
 
