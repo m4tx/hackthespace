@@ -1,6 +1,12 @@
 .navbar {
-  .navbar-brand {
-    color: #606060;
+  .navbar-nav {
+    a.nav-link, a.navbar-brand {
+      color: #606060;
+
+      &:hover, &:focus {
+        color: #4c4c4c;
+      }
+    }
   }
 }
 

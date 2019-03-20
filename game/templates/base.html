@@ -33,7 +33,20 @@
 
 <nav class="navbar navbar-dark navbar-expand-sm text-white px-0">
     <div class="container">
-        <a class="navbar-brand" href="{% first_puzzle_url %}">Start</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="navbar-brand" href="{% first_puzzle_url %}">
+                    Start
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% static 'pdf/terms.pdf' %}"
+                   title="Terms of Use">
+                    TOS
+                </a>
+            </li>
+        </ul>
+
         <a href="https://sfi.pl/">
             <img src="{% static 'images/sfi.svg' %}" id="sfi-logo"
                  alt="SFI Logo">
