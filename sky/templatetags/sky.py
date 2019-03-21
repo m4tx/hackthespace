@@ -7,7 +7,7 @@ from game.puzzle_order import get_next_puzzle_url
 register = template.Library()
 
 CHARS = '.,✦*˚'
-SPACE = '\u2003'
+SPACE = '&nbsp;'
 ITEM_NUM = 100
 
 
@@ -31,7 +31,7 @@ def generate_sky():
             s += random.choice(CHARS)
         s += '</span>'
 
-        for _ in range(random.randint(10, 24)):
+        for _ in range(random.randint(22, 56)):
             s += SPACE
             if random.randint(0, 1) == 1:
                 s += ' '
