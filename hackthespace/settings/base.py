@@ -144,6 +144,7 @@ PUZZLE_ORDER = [
     'login',
     'pages',
     'audio_spectrum',
+    'keypad',
     'vigenere',
     'stego_mix',
     'reverse',

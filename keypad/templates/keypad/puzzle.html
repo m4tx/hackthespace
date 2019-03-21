@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load tale %}
+
+
+{% block extra_head %}
+    <link href="https://fonts.googleapis.com/css?family=Orbitron"
+          rel="stylesheet">
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="{% static 'js/keypad.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% tale %}
+
+        <div class="d-flex justify-content-center">
+            <div class="keypad-container">
+                {% include 'keypad/keypad.html' %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
