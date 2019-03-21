@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load tale %}
 {% load hash %}
 
 
@@ -7,6 +8,8 @@
     <!-- Notice: Debug: MD5(pw('{{ username }}')) = '{% md5 password %}'; in /home/hackthespace/public_html/inc/login.php on line 237 -->
 
     <div class="container">
+        {% tale %}
+
         <h1>Board the ship</h1>
 
         <form method="post">

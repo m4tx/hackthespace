@@ -1,1 +1,1 @@
-You found a program that allows in only if the user provides valid password. The code below is the only part of it that you have access to. You need that password. Can you guess what it is?
+This is it. You feel you’re getting closer to all the answers you crave. You found a program that allows in only if the user provides valid password. The code below is the only part of it that you have access to. You need that password. Can you guess what it is?
