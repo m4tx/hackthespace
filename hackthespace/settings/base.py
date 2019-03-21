@@ -165,7 +165,7 @@ PUZZLE_AUDIO_SPECTRUM_AUDIO_POS = 5000
 PUZZLE_AUDIO_SPECTRUM_AUDIO_GAIN = -35
 PUZZLE_AUDIO_SPECTRUM_TAGS = {
     'ARTIST': ['SFI'],
-    'ALBUM': ['Foreign Battle'],
+    'ALBUM': ['Surfing in Space'],
     'TITLE': ['Deadly Fox'],
     'DATE': ['2019'],
     'TRACKNUMBER': ['9/11'],
