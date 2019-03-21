@@ -47,7 +47,7 @@ class Player(models.Model):
         return s
 
 
-class SolvedPuzzle(models.Model):
+class AbstractSolvedPuzzle(models.Model):
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
     puzzle = models.CharField(max_length=40, choices=PUZZLES)
     timestamp = models.DateTimeField()
@@ -56,3 +56,12 @@ class SolvedPuzzle(models.Model):
         index_together = [
             ('player', 'puzzle')
         ]
+        abstract = True
+
+
+class SolvedPuzzle(AbstractSolvedPuzzle):
+    pass
+
+
+class SolvedHiddenPuzzle(AbstractSolvedPuzzle):
+    pass

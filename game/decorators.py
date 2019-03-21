@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.views import View
 from typing import Type
 
-from game.models import SolvedPuzzle, Player
+from game.models import SolvedPuzzle, Player, SolvedHiddenPuzzle
 from game.puzzle_order import puzzle_less, get_next_puzzle, get_last_puzzle
 
 
@@ -52,6 +52,32 @@ def requires_email(cls: Type[View]):
         # their email address
         if not player.email:
             return redirect(reverse('email_form'))
+
+        return response
+
+    cls.dispatch = new_dispatch
+    return cls
+
+
+def hidden_puzzle(cls: Type[View]):
+    orig_dispatch = cls.dispatch
+
+    cls.puzzle_name = cls.__module__.split('.')[0]
+
+    def new_dispatch(self, request, *args, **kwargs):
+        response = orig_dispatch(self, request, *args, **kwargs)
+
+        player = Player.get_player(request)
+
+        if not SolvedPuzzle.objects.filter(
+                player=player, puzzle=cls.puzzle_name).exists():
+            raise Http404
+
+        if not SolvedHiddenPuzzle.objects.filter(
+                player=player, puzzle=cls.puzzle_name).exists():
+            SolvedHiddenPuzzle.objects.create(
+                player=player, puzzle=cls.puzzle_name,
+                timestamp=timezone.now())
 
         return response
 
