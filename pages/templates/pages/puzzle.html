@@ -43,6 +43,17 @@
                         <td>{{ puzzle.name }}</td>
                     </tr>
                 {% endfor %}
+
+                {% if object_list|length > 1 %}
+                    <!--
+                    <tr>
+                        <th scope="row">0</th>
+                        <td>{% url 'pages:pages_hidden' %}</td>
+                        <td>Feb. 31, 2019, 2:43 p.m.</td>
+                        <td>pages2</td>
+                    </tr>
+                    -->
+                {% endif %}
                 </tbody>
             </table>
         {% endif %}

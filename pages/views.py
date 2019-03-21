@@ -1,6 +1,6 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 
-from game.decorators import puzzle
+from game.decorators import puzzle, hidden_puzzle, requires_email
 from pages.forms import SearchForm
 from pages.models import Puzzle
 
@@ -21,3 +21,9 @@ class PagesPuzzleView(ListView):
                     form.cleaned_data['query']))
 
         return Puzzle.objects.none()
+
+
+@hidden_puzzle
+@requires_email
+class PagesHiddenPuzzleView(TemplateView):
+    template_name = 'game/hidden_puzzle.html'
