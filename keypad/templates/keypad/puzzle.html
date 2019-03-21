@@ -19,7 +19,10 @@
 
         <div class="d-flex justify-content-center">
             <div class="keypad-container">
-                {% include 'keypad/keypad.html' %}
+                <form method="post">
+                    {% csrf_token %}
+                    {% include 'keypad/keypad.html' %}
+                </form>
             </div>
         </div>
     </div>
