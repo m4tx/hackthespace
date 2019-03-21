@@ -29,35 +29,21 @@ jQuery(function ($, undefined) {
             },
         },
         'lib': {},
-        'lib64': {},
-        'lost+found': {},
-        'media': {},
-        'mnt': {},
-        'opt': {},
         'proc': {},
         'root': {},
         'run': {},
         'sbin': {},
-        'srv': {},
         'sys': {},
         'tmp': {},
         'usr': {
             'bin': BIN_DIR,
-            'include': {},
             'lib': {},
-            'local': {},
             'sbin': {},
             'share': {},
-            'src': {},
         },
         'var': {
-            'cache': {},
-            'db': {},
-            'empty': {},
-            'games': {},
             'lib': {},
             'local': {},
-            'lock': {},
             'log': {
                 'curl.log': '*   Trying 127.0.0.1...\n' +
                     '* TCP_NODELAY set\n' +
@@ -75,8 +61,6 @@ jQuery(function ($, undefined) {
                     '< \n' +
                     '* Connection #0 to host localhost left intact'
             },
-            'mail': {},
-            'opt': {},
             'run': {},
             'spool': {},
             'tmp': {},
