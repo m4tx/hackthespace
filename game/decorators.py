@@ -51,6 +51,7 @@ def requires_email(cls: Type[View]):
         # Only allow proceeding to the current puzzle if the user provided
         # their email address
         if not player.email:
+            request.session['email_next'] = request.path
             return redirect(reverse('email_form'))
 
         return response

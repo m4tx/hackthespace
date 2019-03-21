@@ -23,4 +23,9 @@ class EmailFormView(FormView):
         }
 
     def get_success_url(self):
+        if 'email_next' in self.request.session:
+            next_url = self.request.session['email_next']
+            del self.request.session['email_next']
+            return next_url
+
         return get_puzzle_url(Player.get_player(self.request).last_puzzle)
