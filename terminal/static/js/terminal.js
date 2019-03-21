@@ -1,9 +1,9 @@
 jQuery(function ($, undefined) {
     const BIN_FILES = [
         'bash', 'cat', 'chmod', 'chown', 'cp', 'date', 'df', 'dir', 'echo',
-        'ed', 'efibootmgr', 'false', 'fukulinus', 'getfacl', 'grep', 'ip',
-        'kill', 'less', 'ln', 'login', 'ls', 'mkdir', 'mktemp', 'more',
-        'mount', 'mv', 'nano', 'open', 'ping', 'ps', 'pwd', 'readlink', 'rm',
+        'ed', 'efibootmgr', 'false', 'f1ndpr1ze.sh', 'fukulinus', 'getfacl',
+        'grep', 'ip', 'kill', 'less', 'ln', 'login', 'ls', 'mkdir', 'mktemp',
+        'more', 'mount', 'mv', 'nano', 'open', 'ping', 'ps', 'pwd', 'rm',
         'rmdir', 'sed', 'sh', 'sleep', 'su', 'sync', 'systemctl', 'systemd',
         'tar', 'touch', 'true', 'trythis', 'uname', 'umount', 'urcurious',
         'which'

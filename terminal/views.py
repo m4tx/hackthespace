@@ -11,4 +11,4 @@ class TerminalPuzzleView(TemplateView):
 @hidden_puzzle
 @requires_email
 class TerminalHiddenPuzzleView(TemplateView):
-    template_name = 'terminal/hidden_puzzle.html'
+    template_name = 'game/hidden_puzzle.html'
