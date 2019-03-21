@@ -17,8 +17,6 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-import game.urls
-
 urlpatterns = [
     path('dontenterthissecretpage/', admin.site.urls),
     path('', include('game.urls')),
