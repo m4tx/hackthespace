@@ -60,7 +60,7 @@ db.sqlite3
 # Compiled files
 static_root/
 generated/
-game/static/scss/main.css
+game/static/scss/*.css
 
 # Flask stuff:
 instance/
