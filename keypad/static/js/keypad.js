@@ -41,12 +41,12 @@
     }
 
     function setErrorState() {
-        disabled = true;
         setCode('ERR');
+        disabled = true;
 
         setTimeout(function () {
-            setCode('');
             disabled = false;
+            setCode('');
         }, 2000);
     }
 
