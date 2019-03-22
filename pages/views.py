@@ -16,9 +16,10 @@ class PagesPuzzleView(ListView):
 
     def get_queryset(self):
         form = self.form_class(self.request.GET)
-        q = form.cleaned_data['query'].lower()
 
         if form.is_valid():
+            q = form.cleaned_data['query'].lower()
+
             query = Puzzle.objects.raw(
                 'SELECT * from pages_puzzle WHERE url = \'{}\''.format(
                     q))
