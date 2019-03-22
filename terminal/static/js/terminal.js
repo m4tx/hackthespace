@@ -203,6 +203,10 @@ jQuery(function ($, undefined) {
     }
 
     function execCat(cmd, args) {
+        if (!args.length) {
+            return;
+        }
+
         let path = pathRelativeToAbsolute(args[0]);
 
         if (!fileExists(path)) {
