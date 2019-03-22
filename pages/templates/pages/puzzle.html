@@ -56,6 +56,10 @@
                 {% endif %}
                 </tbody>
             </table>
+        {% elif query_error %}
+            <div class="alert alert-danger">
+                SQL error
+            </div>
         {% endif %}
     </div>
 {% endblock %}
