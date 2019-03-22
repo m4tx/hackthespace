@@ -10,7 +10,9 @@
     }
 
     function setCode(code) {
-        getDisplay().value = code.substr(0, 7);
+        if (!disabled) {
+            getDisplay().value = code.substr(0, 7);
+        }
     }
 
     function appendDigit(key) {
@@ -23,8 +25,6 @@
     }
 
     function checkCodeValid(code) {
-        return true;
-
         if (code.length !== 7) {
             return false;
         }
