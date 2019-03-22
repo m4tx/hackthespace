@@ -16,11 +16,17 @@ class PagesPuzzleView(ListView):
 
     def get_queryset(self):
         form = self.form_class(self.request.GET)
+        q = form.cleaned_data['query'].lower()
+
         if form.is_valid():
             query = Puzzle.objects.raw(
                 'SELECT * from pages_puzzle WHERE url = \'{}\''.format(
-                    form.cleaned_data['query']))
+                    q))
             len(query)  # Force evaluate the query
+
+            if 'union' in q or 'join' in q or 'where' in q or 'select' in q:
+                return Puzzle.objects.none()
+
             return query
 
         return Puzzle.objects.none()
