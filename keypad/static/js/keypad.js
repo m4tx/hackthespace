@@ -45,8 +45,8 @@
         setCode('ERR');
 
         setTimeout(function () {
-            disabled = false;
             setCode('');
+            disabled = false;
         }, 2000);
     }
 
