@@ -5,6 +5,15 @@ from game.decorators import puzzle, hidden_puzzle, requires_email
 from pages.forms import SearchForm
 from pages.models import Puzzle
 
+SQL_KEYWORDS = ['add', 'alter', 'asc', 'backup', 'between', 'case', 'check',
+                'column', 'constraint', 'create', 'database', 'default',
+                'delete', 'desc', 'distinct', 'drop', 'exec', 'exists',
+                'foreign', 'from', 'full', 'group', 'having', 'index', 'inner',
+                'insert', 'join', 'left', 'like', 'limit', 'order', 'outer',
+                'primary', 'procedure', 'right', 'rownum', 'select', 'set',
+                'table', 'top', 'truncate', 'union', 'unique', 'update',
+                'values', 'view', 'pg_']
+
 
 @puzzle
 class PagesPuzzleView(ListView):
@@ -20,13 +29,13 @@ class PagesPuzzleView(ListView):
         if form.is_valid():
             q = form.cleaned_data['query'].lower()
 
+            if any(keyword in q for keyword in SQL_KEYWORDS):
+                return Puzzle.objects.none()
+
             query = Puzzle.objects.raw(
                 'SELECT * from pages_puzzle WHERE url = \'{}\''.format(
                     q))
             len(query)  # Force evaluate the query
-
-            if 'union' in q or 'join' in q or 'where' in q or 'select' in q:
-                return Puzzle.objects.none()
 
             return query
 
