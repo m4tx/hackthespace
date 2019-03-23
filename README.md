@@ -1,7 +1,7 @@
 # hackthespace
 
 Hack the Space is a cyber security CTF-like game created for the [15th SFI
-Academic IT Festival](https://sfi.pl/). The game consists of 11 puzzles
+Academic IT Festival](https://sfi.pl/). The game consists of 12 puzzles
 in the field of cryptanalysis, steganography, reverse engineering, and
 web application security.
 
