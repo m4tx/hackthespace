@@ -9,14 +9,14 @@ The goal is to use SQL injection to retrieve data about the next puzzle.
 The query used for the form look like so:
 
 ```sql
-SELECT * FROM pages_puzzle WHERE url = '{query}';
+SELECT * FROM pages_puzzle WHERE url = '{query}'
 ```
 
 A valid query text that can be used may therefore be, for example,
-`' OR 1=1; --`. This gives a query like so:
+`' OR 1=1 --`. This gives a query like this:
 
 ```sql
-SELECT * FROM pages_puzzle WHERE url = '' OR 1=1; --';
+SELECT * FROM pages_puzzle WHERE url = '' OR 1=1 --'
 ```
 
 The query gives the following result:

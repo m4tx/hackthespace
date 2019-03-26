@@ -6,7 +6,7 @@ The page tells the player that they were too slow:
 
 While the message may look like someone outperformed the player in the contest,
 it actually refers to something else. The page this message is displayed on
-actually has different a URL than the original, found in the previous puzzle:
+has a different URL than the original, found in the previous puzzle:
 `/ysoslow/`. The original URL, `/wowsuchecret/` immediately redirects to
 the former — thus, "You were too slow" refers to the fact the player have not
 stopped loading the page fast enough to intercept the redirect. Another hint

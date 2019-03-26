@@ -1,6 +1,6 @@
 # reverse: `ayeayepatch/`
 
-The page contains a `check()` function written in x86_64 assembly.
+The page contains a function named  `check` written in x86_64 assembly.
 
 ![Screenshot of the reverse puzzle](images/12_reverse.png)
 

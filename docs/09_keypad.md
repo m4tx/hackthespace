@@ -36,8 +36,8 @@ There are some key observations that come from the code:
 * It must match the regex in the second `if` statement. A short analysis:
   * The second part of the OR (`(?![135])16{1,2}\x33\068)`) does not ever
     match anything
-  * The word boundaries (`\b`) are there just to obfuscate the expression.
-    (as `^` and `$` already have the same effect) The regex can be simplified
+  * The word boundaries (`\b`) are there just to obfuscate the expression
+    (as `^` and `$` already have the same effect). The regex can be simplified
     to `(4(2)){1,3}[^2346789]*?\1\d\2`
   * The first group is always `42`, the second group is always `2`. The regex
     can be therefore simplified to `(42){1,3}[^2346789]*?42\d2`
