@@ -19,7 +19,7 @@ check:
     ret
 
     .after_inv_len:
-    lea rax, [rdi-1+rcx]
+    lea rax, [rdi - 1 + rcx]
     mov rdx, rdi
     cmp rdi, rax
     jnb .check_pw
@@ -37,7 +37,7 @@ check:
     .check_pw:
     xor eax, eax
     .pw_loop:
-    mov dl, [rdi+rax]
+    mov dl, [rdi + rax]
     xor dl, [rel key + rax]
     cmp dl, [rel strx + rax]
     jne .ret_false

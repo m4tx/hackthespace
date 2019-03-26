@@ -33,7 +33,7 @@ class PagesPuzzleView(ListView):
                 return Puzzle.objects.none()
 
             query = Puzzle.objects.raw(
-                'SELECT * from pages_puzzle WHERE url = \'{}\''.format(
+                'SELECT * FROM pages_puzzle WHERE url = \'{}\''.format(
                     q))
             len(query)  # Force evaluate the query
 
