@@ -3,7 +3,7 @@ django-appconf==1.0.2
 django-compressor==2.2
 django-sass-processor==0.7.2
 libsass==0.17.0
-Pillow==6.2.0
+Pillow==8.2.0
 pydub==0.23.1
 pyminizip==0.2.4
 pytaglib==1.4.4
