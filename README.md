@@ -10,7 +10,7 @@ web application security.
 
 ## Dependencies
 
-* Python 3.5+ (dev package)
+* Python 3.10 (dev package)
 * GCC, G++
 * ffmpeg
 * taglib (dev package)
