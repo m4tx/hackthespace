@@ -1,0 +1,42 @@
+{%- let urls = base_context.urls -%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>hackthespace</title>
+
+    <link rel="stylesheet" href="{{ base_context.static_files.url_for("static/vendor/css/open-iconic-bootstrap.css")? }}">
+    <link rel="stylesheet" href="{{ base_context.static_files.url_for("static/css/main.css")? }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
+
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-expand-sm text-white px-0">
+    <div class="container">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="navbar-brand" href="TODO">
+                    Start
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main">
+    {% block content %}{% endblock content %}
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+
+{% block extra_scripts %}{% endblock extra_scripts %}
+</body>
+</html>

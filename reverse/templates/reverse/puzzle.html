@@ -1,12 +1,10 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% load trim %}
-{% load tale %}
-
 
 {% block content %}
     <div class="container">
-        {% tale %}
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
 
         <pre class="text-grey"><code>{% filter trim %}
             {% include 'reverse/code.asm'|trim %}

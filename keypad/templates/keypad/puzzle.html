@@ -1,7 +1,4 @@
-{% extends 'base.html' %}
-
-{% load static %}
-{% load tale %}
+{% extends "base.html" %}
 
 
 {% block extra_head %}
@@ -10,12 +7,12 @@
 {% endblock %}
 
 {% block extra_scripts %}
-    <script src="{% static 'js/keypad.js' %}"></script>
+    <script src="{{ base_context.static_files.url_for("js/keypad.js")? }}"></script>
 {% endblock %}
 
 {% block content %}
     <div class="container">
-        {% tale %}
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
 
         <div class="d-flex justify-content-center">
             <div class="keypad-container">

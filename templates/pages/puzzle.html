@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% let urls = base_context.urls %}
+
+{% import "../tale.html" as tale %}
+
+{% block content %}
+    <div class="container">
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
+
+        <h1>Lookup page</h1>
+
+        <form method="get">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="query"
+                       placeholder="Lookup by URL"
+                       aria-describedby="search-button"
+                       value="{{ query }}">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" type="submit"
+                            id="search-button">
+                        <span class="oi oi-magnifying-glass"></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        {% if !object_list.is_empty() %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Date added</th>
+                    <th scope="col">Internal name</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for puzzle in object_list %}
+                    <tr>
+                        <th scope="row">{{ puzzle.id }}</th>
+                        <td>{{ puzzle.url }}</td>
+                        <td>{{ puzzle.date }}</td>
+                        <td>{{ puzzle.name }}</td>
+                    </tr>
+                {% endfor %}
+
+                {% if object_list.len() > 1 %}
+                    <!--
+                    <tr>
+                        <th scope="row">0</th>
+                        <td>{{ cot::reverse!(urls, "pages_hidden")? }}</td>
+                        <td>Feb. 31, 2019, 2:43 p.m.</td>
+                        <td>pages2</td>
+                    </tr>
+                    -->
+                {% endif %}
+                </tbody>
+            </table>
+        {% elif query_error %}
+            <div class="alert alert-danger">
+                SQL error
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

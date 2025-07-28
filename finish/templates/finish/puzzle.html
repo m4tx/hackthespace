@@ -1,8 +1,7 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% load static %}
 {% load sass_tags %}
-{% load tale %}
+{% import "../tale.html" as tale %}
 {% load trim %}
 
 
@@ -20,7 +19,7 @@
             </div>
         </div>
 
-        <img src="{% static 'images/finish.png' %}"
+        <img src="{{ base_context.static_files.url_for("images/finish.png")? }}"
              class="img-fluid d-block" alt="Finish">
     </div>
 {% endblock %}

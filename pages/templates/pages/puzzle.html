@@ -1,11 +1,9 @@
-{% extends 'base.html' %}
-
-{% load tale %}
+{% extends "base.html" %}
 
 
 {% block content %}
     <div class="container">
-        {% tale %}
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
 
         <h1>Lookup page</h1>
 

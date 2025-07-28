@@ -1,5 +1,3 @@
-{% load puzzles %}
-
 Academic IT Festival is an international conference organized since 2005 by students, for students. Each year in Cracow we gather IT-enthusiasts from the entire country along with people passionate about informatics, regardless of their profession.
 
 The conference annually hosts distinguished and well-known guests from the entire IT environment. The participants have an unique opportunity to listen to the lectures given by those amazing people and take part in workshops to develop their practical skills. Diversity of the topics allows everybody to find something interesting. It is rare opportunity to meet lots of experts face to face in one place and learn from them.

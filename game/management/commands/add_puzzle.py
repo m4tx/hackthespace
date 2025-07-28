@@ -4,7 +4,7 @@ from django.core.management import call_command
 
 from django.core.management.base import BaseCommand, CommandError
 
-TEMPLATE_CONTENT = '''{% extends 'base.html' %}
+TEMPLATE_CONTENT = '''{% extends "base.html" %}
 
 
 {% block content %}

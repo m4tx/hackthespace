@@ -1,28 +1,25 @@
-{% extends 'base.html' %}
-
-{% load static %}
-{% load tale %}
+{% extends "base.html" %}
 
 
 {% block content %}
     <div class="container">
-        {% tale %}
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
 
         <h1>The SFI Band</h1>
         <h2>Deadly Fox</h2>
 
         <div class="row justify-content-md-center">
             <div class="col-md-auto col-sm-12 col-md-6 col-lg-4">
-                <img src="{% static 'images/surfinginspace.png' %}"
+                <img src="{{ base_context.static_files.url_for("images/surfinginspace.png")? }}"
                      class="img-fluid mx-auto d-block rounded"
                      alt="Space Pirate">
             </div>
         </div>
 
         <audio controls class="d-block w-100 mt-3">
-            <source src="{% static 'audio/generated/deadlyfox.ogg' %}"
+            <source src="{{ base_context.static_files.url_for("audio/generated/deadlyfox.ogg")? }}"
                     type="audio/ogg">
-            <source src="{% static 'audio/generated/deadlyfox.mp3' %}"
+            <source src="{{ base_context.static_files.url_for("audio/generated/deadlyfox.mp3")? }}"
                     type="audio/mpeg">
         </audio>
     </div>

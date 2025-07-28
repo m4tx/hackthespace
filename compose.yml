@@ -1,0 +1,5 @@
+services:
+  web:
+    image: ghcr.io/m4tx/hackthespace:master
+    container_name: hackthespace
+    restart: unless-stopped

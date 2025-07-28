@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% load static %}
 {% load sass_tags %}
 {% load ganalytics %}
-{% load puzzles %}
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport"
@@ -13,10 +10,10 @@
     <title>hackthespace</title>
 
     <link rel="stylesheet"
-          href="{% static 'vendor/css/open-iconic-bootstrap.css' %}">
+          href="{{ base_context.static_files.url_for("vendor/css/open-iconic-bootstrap.css")? }}">
 
     <link rel="stylesheet"
-          href="{% static 'vendor/css/bootstrap4-neon-glow.min.css' %}">
+          href="{{ base_context.static_files.url_for("vendor/css/bootstrap4-neon-glow.min.css")? }}">
     <link rel="stylesheet"
           href="{% sass_src 'scss/main.scss' %}">
 
@@ -40,7 +37,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% static 'pdf/terms.pdf' %}"
+                <a class="nav-link" href="{{ base_context.static_files.url_for("pdf/terms.pdf")? }}"
                    title="Terms of Use">
                     TOS
                 </a>
@@ -48,7 +45,7 @@
         </ul>
 
         <a href="https://sfi.pl/">
-            <img src="{% static 'images/sfi.svg' %}" id="sfi-logo"
+            <img src="{{ base_context.static_files.url_for("images/sfi.svg")? }}" id="sfi-logo"
                  alt="SFI Logo">
         </a>
     </div>

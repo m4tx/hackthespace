@@ -1,14 +1,11 @@
-{% extends 'base.html' %}
-
-{% load static %}
-{% load tale %}
+{% extends "base.html" %}
 
 
 {% block content %}
     <div class="container">
-        {% tale %}
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
 
-        <img src="{% static 'images/generated/lookcloser.jpg' %}"
+        <img src="{{ base_context.static_files.url_for("images/generated/lookcloser.jpg")? }}"
              class="img-fluid" alt="Look closer!" title="Look closer!">
     </div>
 {% endblock %}

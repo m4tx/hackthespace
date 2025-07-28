@@ -1,0 +1,1 @@
+A long time ago in a galaxy far, far away... Someone naive let an intern deploy their code on production and left you with total failure of your autopilot, thank them very much. Well, it looks like you'll have to find your way home using good old manual navigation - unacceptable, what year is it? {{ crate::template_util::current_year() }}?

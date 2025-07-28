@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{%- import "../tale.html" as tale -%}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{{ base_context.static_files.url_for("static/css/sky.css")? }}">
+{% endblock extra_head %}
+
+{% import "../tale.html" as tale %}
+
+{% block content %}
+    <div class="container">
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
+
+        <p class="text-grey text-spacey sky-container">
+            {{ self::generate_sky() }}
+        </p>
+    </div>
+{% endblock content %}

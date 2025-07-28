@@ -1,0 +1,5 @@
+[ ] Create new app in a workspace
+[ ] `AppName`/`RouteName` newtypes
+[ ] Redirect to routes with `/` appended
+[ ] Form processing template (also fix the admin login page!!)
+[ ] Document SQLite (and others?) flags

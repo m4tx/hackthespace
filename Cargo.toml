@@ -1,0 +1,40 @@
+[package]
+name = "hackthespace"
+version = "0.1.0"
+edition = "2024"
+
+[workspace]
+members = ["hackthespace_core"]
+
+[workspace.dependencies]
+ab_glyph = "0.2"
+anyhow = "1"
+askama = "0.14"
+chrono = "0.4"
+cot = { git = "https://github.com/cot-rs/cot.git", rev = "18130c1d19eb33b83ee67224e90b60ee5cb11255", features = ["full"] }
+grass = "0.13"
+imageproc = { version = "0.26", path = "/home/m4tx/projects/imageproc" }
+lightningcss = "1.0.0-alpha.67"
+rand = "0.9"
+hackthespace_core = { path = "hackthespace_core" }
+md-5 = "0.10"
+base16ct = { version = "0.2", features = ["std"] }
+
+[patch.crates-io]
+askama = { git = "https://github.com/askama-rs/askama.git", rev = "d670d9b91ccc7b8deb720102b01c0b71d0e09507" }
+
+[dependencies]
+askama.workspace = true
+chrono.workspace = true
+cot = { workspace = true, features = ["full"] }
+rand.workspace = true
+hackthespace_core.workspace = true
+md-5.workspace = true
+base16ct.workspace = true
+
+[build-dependencies]
+ab_glyph.workspace = true
+anyhow.workspace = true
+grass.workspace = true
+imageproc.workspace = true
+lightningcss.workspace = true

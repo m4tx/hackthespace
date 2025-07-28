@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% import "../tale.html" as tale %}
+
+{% block content %}
+    <div class="container py-5">
+        <h1 class="text-danger">You were too slow!</h1>
+
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
+
+        <img src="{{ base_context.static_files.url_for("static/images/omg.png")? }}"
+             class="img-fluid mx-auto d-block rounded w-75"
+             alt="Space Pirate">
+    </div>
+{% endblock %}

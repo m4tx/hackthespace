@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Congratulations!</h1>
+
+        <p class="lead">You've found a secret!</p>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto col-sm-12 col-md-6 col-lg-4">
+                <img class="img-fluid d-block mx-auto my-4"
+                     src="{{ base_context.static_files.url_for("static/images/pirate.png")? }}">
+            </div>
+        </div>
+
+        <a class="btn btn-primary float-right" role="button" href="TODO">
+            Continue <span class="ml-1 small oi oi-chevron-right"></span>
+        </a>
+    </div>
+{% endblock %}
