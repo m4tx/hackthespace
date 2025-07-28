@@ -1,0 +1,9 @@
+@import 'body';
+@import 'navbar';
+@import 'fairy_tale';
+
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 4rem 2rem;
+    }
+}

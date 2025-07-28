@@ -1,0 +1,7 @@
+services:
+  hackthespace:
+    image: ghcr.io/m4tx/hackthespace:master
+    container_name: hackthespace
+    restart: unless-stopped
+    volumes:
+      - ./config:/app/config:ro

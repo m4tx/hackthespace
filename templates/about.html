@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{%- let urls = base_context.urls -%}
+
+{% block content %}
+    <div class="jumbotron bg-transparent mb-0 radius-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8">
+                    <h1 class="display-2 mb-4">about</h1>
+
+                    <div class="text-grey text-spacey">
+                        <p>
+                            <strong>Hack the Space</strong> is a cyber security
+                            CTF-like game. It consists of twelve puzzles spanning
+                            cryptanalysis, steganography, reverse engineering, and
+                            web application security. Board the pirate ship, put
+                            your skills to the test, and hack your way through
+                            space.
+                        </p>
+
+                        <h2 class="h4 mt-4">How to navigate</h2>
+                        <ul>
+                            <li>
+                                Begin at the
+                                <a href="{{ cot::reverse!(urls, "rot13")? }}">start page</a>.
+                            </li>
+                            <li>
+                                Every puzzle, once solved, reveals the address of
+                                the next one. There is no menu &mdash; following
+                                the trail is part of the game.
+                            </li>
+                            <li>
+                                Keep your eyes open &mdash; a couple of puzzles
+                                hide secret pages for the truly curious.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

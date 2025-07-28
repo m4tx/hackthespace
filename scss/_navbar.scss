@@ -1,0 +1,15 @@
+.navbar {
+  .navbar-nav {
+    a.nav-link, a.navbar-brand {
+      color: #606060;
+
+      &:hover, &:focus {
+        color: #4c4c4c;
+      }
+    }
+  }
+}
+
+#sfi-logo {
+  height: 40px;
+}

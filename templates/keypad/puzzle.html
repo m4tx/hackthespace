@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% import "../tale.html" as tale %}
+
+{% block extra_head %}
+    <link href="https://fonts.googleapis.com/css?family=Orbitron"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{{ base_context.static_files.url_for("static/css/keypad.css")? }}">
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="{{ base_context.static_files.url_for("static/js/keypad.js")? }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
+
+        <div class="d-flex justify-content-center">
+            <div class="keypad-container">
+                <form method="post">
+                    {% include "keypad/keypad.html" %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

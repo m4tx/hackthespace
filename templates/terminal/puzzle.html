@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+    <link rel="stylesheet"
+          href="{{ base_context.static_files.url_for("static/vendor/css/jquery.terminal-2.2.0.min.css")? }}">
+{% endblock %}
+
+{% block extra_scripts %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="{{ base_context.static_files.url_for("static/vendor/js/jquery.terminal-2.2.0.min.js")? }}"></script>
+    <script src="{{ base_context.static_files.url_for("static/js/terminal.js")? }}"></script>
+{% endblock %}
+
+{% import "../tale.html" as tale %}
+
+{% block content %}
+    <div role="main" class="flex-grow-1 container d-flex flex-column">
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
+
+        <div id="terminal" class="terminal flex-grow-1"></div>
+    </div>
+{% endblock content %}

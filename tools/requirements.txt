@@ -1,0 +1,8 @@
+# Dependencies for the one-off puzzle asset generators.
+#
+# generate_audio_spectrum.py also needs the ffmpeg binary (pydub) and the
+# taglib system library (pytaglib) available on the system.
+Pillow
+pydub
+pytaglib
+pyminizip
