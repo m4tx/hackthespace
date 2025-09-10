@@ -1,4 +1,4 @@
-Django==2.2.13
+Django==4.2.24
 django-appconf==1.1.0
 django-compressor==3.0
 django-sass-processor==0.7.2
