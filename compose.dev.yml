@@ -4,4 +4,4 @@ services:
     container_name: hackthespace
     restart: unless-stopped
     volumes:
-      - ./config:/app/config:ro
+      - ./config/prod.toml:/app/prod.toml:ro
