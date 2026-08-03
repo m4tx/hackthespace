@@ -3,7 +3,7 @@ WORKDIR /usr/src/hackthespace
 COPY . .
 RUN cargo install --path . --locked
 
-FROM docker.io/library/debian:12-slim
+FROM docker.io/library/debian:13-slim
 WORKDIR /app
 COPY --from=builder /usr/local/cargo/bin/hackthespace /usr/local/bin/hackthespace
 
