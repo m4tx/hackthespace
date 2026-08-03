@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "../tale.html" as tale %}
+
+{% block content %}
+    <div class="container">
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
+
+        <div class="row">
+            <div class="col-xl-6 text-grey text-spacey">
+                <img class="rounded mx-auto img-fluid d-block mb-4 w-75"
+                     src="{{ base_context.static_files.url_for("static/images/vinegar.png")? }}">
+
+                {% filter vigenere("absolutelycool")|trim|linebreaks %}
+                    {% include "text.txt" %}
+                {% endfilter %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

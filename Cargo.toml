@@ -1,0 +1,20 @@
+[package]
+name = "hackthespace"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+askama = "0.16"
+base16ct = { version = "1", features = ["alloc"] }
+chrono = "0.4"
+cot = { git = "https://github.com/cot-rs/cot.git", rev = "03e1b9b22ea1d7dacc4257d542954daffb230858", default-features = false, features = ["sqlite", "live-reload"] }
+md5 = { package = "md-5", version = "0.11" }
+rand = "0.10"
+serde = { version = "1.0.229", features = ["derive"] }
+
+[build-dependencies]
+ab_glyph = "0.2"
+anyhow = "1"
+grass = "0.13"
+imageproc = "0.27"
+lightningcss = "1.0.0-alpha.72"

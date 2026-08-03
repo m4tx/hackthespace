@@ -8,49 +8,79 @@ web application security.
 ![Screenshot of the homepage](docs/images/homepage.png)
 
 
+The game is built in [Rust](https://www.rust-lang.org/) with the
+[Cot](https://cot.rs/) web framework.
+
+
 ## Dependencies
 
-* Python 3.10 (dev package)
-* GCC, G++
-* ffmpeg
-* taglib (dev package)
+* A [Rust](https://www.rust-lang.org/) toolchain (edition 2024, Rust 1.94 or
+  newer)
+* A C compiler (needed to build the bundled SQLite)
 
 ### Debian
 ```
-sudo apt install python3 python3-dev gcc g++ ffmpeg libtag1-dev
+sudo apt install build-essential
 ```
 
 ### Arch Linux
 ```
-sudo pacman -S python gcc ffmpeg taglib
+sudo pacman -S base-devel
+```
+
+The Bootstrap sources live in a git submodule, so clone the repository
+recursively (or run `git submodule update --init` in an existing clone):
+
+```
+git clone --recursive git@github.com:m4tx/hackthespace.git
 ```
 
 
 ## Quick Start
 
-It is recommended to use `virtualenv`.
+Static assets (CSS and generated images) are produced by `build.rs`, and the
+HTML templates are compiled into the binary, so a single command builds and
+serves everything:
 
 ```
-pip install -r requirements.txt
-cp hackthespace/settings/local_settings.py{.example,}
-python manage.py migrate
-python manage.py generate_assets
-python manage.py runserver
+cargo run
 ```
+
+The development server starts at <http://127.0.0.1:8000> using the
+`config/dev.toml` configuration. The SQLite database is created and migrated
+automatically on the first run.
 
 
 ## Deployment
 
-Use `production_settings.py.example` as the settings base. Remember to
-compile the SCSSes before collecting the static files:
+The recommended way to deploy is via the prebuilt container image published to
+the GitHub Container Registry on every push:
 
 ```
-python manage.py compilescss
-python manage.py collectstatic
+docker compose up -d
 ```
 
-Then, use standard methods of deploying Django apps, e.g. using uwsgi
-and nginx.
+`compose.yml` pulls `ghcr.io/m4tx/hackthespace:master`. To build the image
+locally instead, use `compose.dev.yml`:
+
+```
+docker compose -f compose.dev.yml up -d --build
+```
+
+The container listens on port 8000. Both compose files mount the local
+`config/` directory into the container (read-only), so the configuration stays
+editable from the host; by default the server uses `config/dev.toml`. For a
+custom deployment, copy `config/prod.toml.example` to `config/prod.toml`, set a
+random hex `secret_key`, and start the server with `-c prod` (e.g. by overriding
+the container `command`).
+
+To run without Docker, build the release binary and run it from a directory
+containing the `config/` folder:
+
+```
+cargo build --release
+./target/release/hackthespace -c prod -l 0.0.0.0:8000
+```
 
 
 ## Write-up

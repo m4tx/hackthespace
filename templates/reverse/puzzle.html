@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% import "../tale.html" as tale %}
+
+{% block content %}
+    <div class="container">
+        {% call tale::tale() %}{% include "tale.txt" %}{% endcall %}
+
+        <pre class="text-grey"><code>{% include "code.asm" %}</code></pre>
+    </div>
+{% endblock %}

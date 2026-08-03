@@ -1,0 +1,39 @@
+$keypad-padding: 0.25em;
+
+.keypad-container {
+  display: inline-block;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: #000;
+}
+
+.keypad {
+  display: table;
+  font-family: 'Orbitron', monospace;
+
+  .keypad-display {
+    display: table-caption;
+    width: 100%;
+    margin-bottom: 0.4em;
+    padding: $keypad-padding;
+
+    input {
+      width: 100%;
+      color: #0f0;
+    }
+  }
+
+  .keypad-row {
+    display: table-row;
+
+    .keypad-cell {
+      display: table-cell;
+      padding: $keypad-padding;
+
+      button {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
