@@ -1,4 +1,4 @@
-FROM docker.io/library/rust:1.97 AS builder
+FROM docker.io/library/rust:1.98 AS builder
 WORKDIR /usr/src/hackthespace
 COPY . .
 RUN cargo install --path . --locked
